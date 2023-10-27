@@ -1,59 +1,41 @@
 const dataa = {
     "1" : {
-        name : "Cappuccino",
-        img : "https://plus.unsplash.com/premium_photo-1673545518947-ddf3240090b1?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name : "ช็อคโกแลต",
+        img : "https://i.ibb.co/zmVw3cW/395484602-2579720795516096-7106945139039781924-n.jpg",
         price : "เลือก"
     },
     "2" : {
-        name : "Green Tea",
-        img : "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name : "มัจฉะ",
+        img : "https://i.ibb.co/V3pNmKj/395335335-659992379608634-4210268904429680094-n.jpg",
         price : "เลือก"
     },
     "3" : {
-        name : "Orange Juice",
-        img : "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        price : "เลือก"
-    },
-    "4" : {
-        name : "Lemonade",
-        img : "https://images.unsplash.com/photo-1575596510825-f748919a2bf7?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        price : "เลือก"
-    },
-    "5" : {
-        name : "Mango Juice",
-        img : "https://images.unsplash.com/photo-1623400518626-6ea9ab64c5ec?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        price : "เลือก"
-    },
-    "6" : {
-        name : "Apple Juice",
-        img : "https://images.unsplash.com/photo-1575159240102-4331f59433ac?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        price : "เลือก"
-    },
-    "7" : {
-        name : "Iced Chocolate",
-        img : "https://images.unsplash.com/photo-1515316416554-1af1fbca57a2?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        price : "เลือก"
-    },
-    "8" : {
-        name : "Caramel Latte",
-        img : "https://images.unsplash.com/photo-1649780567041-344d8f485e74?auto=format&fit=crop&q=80&w=1854&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        price : "เลือก"
-    },
-    "9" : {
-        name : "Lemon Iced Tea",
-        img : "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        price : "เลือก"
-    },
-    "10" : {
-        name : "Milkshake",
-        img : "https://images.unsplash.com/photo-1502719414926-613118be79d3?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name : "นม",
+        img : "https://i.ibb.co/qmMG9Cz/395602323-146658375176964-6995561933296706444-n.jpg",
         price : "เลือก"
     }
-
+}
+const productAdvice = {
+    "1" : {
+        name : "ช็อคโก้ดับเบิ้ลช็อก",
+        img : "https://i.ibb.co/ck1wcGy/396513004-324839000194199-634570417577241155-n.jpg",
+        price : "75"
+    },
+    "2" : {
+        name : "นมฮอกไกโดบุกบราวชูก้า",
+        img : "https://i.ibb.co/w0JPcVf/395511584-826706265810985-8656128346704444592-n.jpg",
+        price : "75"
+    },
+    "3" : {
+        name : "มัจฉะนมโมจิสตอเบอร์รี่",
+        img : "https://i.ibb.co/rxQTXZn/393426069-1456986588198569-7041280943955321738-n.jpg",
+        price : "75"
+    },
 }
 
 let _page = 1
 let user = 0
+let sumPrice = 0
 const data1 = []
 const data2 = []
 const data3 = []
@@ -64,6 +46,7 @@ function page() {
     document.getElementById('process').style.display = 'none'
 
     if (_page == 1) {
+       
         document.getElementById('body-container').style.display = 'block'
         document.getElementById('payment').style.display = 'none'
         document.getElementById('money').style.display = 'none'
@@ -72,6 +55,10 @@ function page() {
         document.getElementById('payment').style.display = 'block'
         document.getElementById('money').style.display = 'none'
 
+        //document.getElementById('pay-alert1').style.display = 'none'
+        document.getElementById('pay-alert2').style.display = 'none'
+        document.getElementById('pay-alert3').style.display = 'none'
+        
         //console.log(dataa[user])
         document.getElementById('title-img').src = dataa[user].img
         document.getElementById('title-name').innerText = dataa[user].name
@@ -88,6 +75,7 @@ function page() {
         // console.log(data2)
         // console.log(data3)
         
+        
 
         document.getElementById('money-btn').style.display = 'block'
         
@@ -95,43 +83,23 @@ function page() {
 
 
         document.getElementById('money-title').innerText = dataa[user].name
-
+        
         const bodytable1 = document.getElementById('sugar')
         const bodytable2 = document.getElementById('topping')
         const bodytable3 = document.getElementById('size')
 
+        
 
-        data1.forEach(element => {
-            const tr1 = document.createElement('tr')
-            const td1 = document.createElement('td')
-            const li1 = document.createElement('li')
-            const td11 = document.createElement('td')
-
-            li1.innerText = element
-
-            tr1.id = "temp"
-            td1.id = "temp"
-            li1.id = "temp"
-            td11.id = "temp"
-
-            td1.append(li1)
-
-            
-            td11.innerText = "x1"
-
-            tr1.append(td1, td11)
-            bodytable1.append(tr1)
-        });
+        
         data2.forEach(element => {
+
+            sumPrice += 10
             const tr2 = document.createElement('tr')
 
             const td2 = document.createElement('td')
             const li2 = document.createElement('li')
             const td22 = document.createElement('td')
             li2.innerText = element
-           
-
-            
 
             tr2.id = "temp"
             td2.id = "temp"
@@ -145,11 +113,23 @@ function page() {
             bodytable2.append(tr2)
         });
         data3.forEach(element => {
+
             const tr3 = document.createElement('tr')
             const td33 = document.createElement('td')
             const td3 = document.createElement('td')
             const li3 = document.createElement('li')
-            li3.innerText = element
+
+            if (element == "M") {
+                sumPrice += 69
+                li3.innerHTML = element + " <em>(ฟรีท็อปปิ้ง 1 รายการ)</em>"
+            } else if (element == "L") {
+                sumPrice += 79
+                li3.innerHTML = element + " <em>(ฟรีท็อปปิ้ง 2 รายการ)</em>"
+            } else if (element == "XL") {
+                sumPrice += 89
+                li3.innerHTML = element + " <em>(ฟรีท็อปปิ้ง 3 รายการ)</em>"
+            }
+            
            
             tr3.id = "temp"
             td3.id = "temp"
@@ -162,6 +142,58 @@ function page() {
             bodytable3.append(tr3)
         });
 
+        const tr1 = document.createElement('tr')
+        const td1 = document.createElement('td')
+        const li1 = document.createElement('li')
+        const td11 = document.createElement('td')
+
+        if (data3[0] == "M") {
+            if (data2.length <= 1) {
+                sumPrice -= 10
+            } else {
+                sumPrice -= 10
+            }
+        } else if (data3[0] == "L") {
+            if (data2.length <= 2) {
+                if (data2.length == 1) {
+                    sumPrice -= 10
+                }else {
+                    sumPrice -= 20
+                } 
+            } else {
+                sumPrice -= 20
+            }
+        } else if (data3[0] == "XL") {
+            if (data2.length <= 3) {
+                if (data2.length == 1) {
+                    sumPrice -= 10
+                }else if (data2.length == 2) {
+                    sumPrice -= 20
+                } else {
+                    sumPrice -= 30
+                } 
+            } else {
+                sumPrice -= 30
+            }
+        }
+        
+        
+
+        li1.innerHTML = sumPrice + " &#3647;"
+
+        tr1.id = "temp"
+        td1.id = "temp"
+        li1.id = "temp"
+        td11.id = "temp"
+
+        td1.append(li1)
+
+        
+        td11.innerText = "x1"
+
+        tr1.append(td1)
+        bodytable1.append(tr1)
+        
 
     }
 }
@@ -175,7 +207,7 @@ function mainBtn(x, y) {
 
 function qR(x) {
    
-
+    document.getElementById('sum-cash').innerHTML = sumPrice + " &#3647;"
     document.getElementById('qr').style.display = 'block'
     document.getElementById('btn-a-qrr').style.display = 'flex'
 
@@ -200,14 +232,21 @@ function qR(x) {
 }
 
 function toPro() {
-
+    document.getElementById('process-title').innerText = 'กำลังดำเนินการ ...'
     document.getElementById('money-container').style.display = 'none'
     document.getElementById('process').style.display = 'flex'
+    sumPrice = 0
 
+    
+    setTimeout(() => {
+        document.getElementById('process-title').innerText = 'กรุณารับสินค้า'
+    }, 8500)
     setTimeout(() => {
         document.getElementById('process').style.display = 'none'
         document.getElementById('thx').style.display = 'flex'
-    }, 8500)
+        
+    }, 12500)
+    
     
     setTimeout(() => {
         
@@ -215,7 +254,7 @@ function toPro() {
         document.getElementById('money').style.display = 'none'
         document.getElementById('body-container').style.display = 'block'
         reset()
-    }, 10500)
+    }, 13600)
 
 }
 
@@ -226,23 +265,23 @@ function onLoad() {
     const keys = Object.keys(dataa);
     const randomBeverages = [];
 
-    function getRandomKeyWithoutDuplicates() {
-        if (keys.length === 0) {
-            keys = Object.keys(dataa);
-        }
+    // function getRandomKeyWithoutDuplicates() {
+    //     if (keys.length === 0) {
+    //         keys = Object.keys(dataa);
+    //     }
 
-        const randomIndex = Math.floor(Math.random() * keys.length);
-        const randomKey = keys.splice(randomIndex, 1)[0]; // Remove the selected key
+    //     const randomIndex = Math.floor(Math.random() * keys.length);
+    //     const randomKey = keys.splice(randomIndex, 1)[0]; // Remove the selected key
 
-        return randomKey;
-    }
+    //     return randomKey;
+    // }
 
-    for (let i = 0; i < 7; i++) {
-        const randomKey = getRandomKeyWithoutDuplicates();
-        const randomValue = dataa[randomKey];
-        const randomBeverage = { [randomKey]: randomValue };
-        randomBeverages.push(randomBeverage);
-    }
+    // for (let i = 0; i < 7; i++) {
+    //     const randomKey = getRandomKeyWithoutDuplicates();
+    //     const randomValue = dataa[randomKey];
+    //     const randomBeverage = { [randomKey]: randomValue };
+    //     randomBeverages.push(randomBeverage);
+    // }
 
     
     // randomBeverages.forEach(element => {
@@ -278,6 +317,8 @@ function onLoad() {
     
     document.addEventListener("DOMContentLoaded", function () {
 
+        
+
         document.getElementById('payment').style.display = "none"  //dev
         document.getElementById('body-container').style.display = "block"
         document.getElementById('money').style.display = "none"
@@ -292,32 +333,38 @@ function onLoad() {
 
         const iDSec1 = document.getElementById("section1-content")
 
-        for (k of randomBeverages) {
+        for (k in productAdvice) {
+            
             const bodySec1 = document.createElement('div')
             const bodyImgSec1 = document.createElement('div')
             const imgSec1 = document.createElement('img')
             const divTitle = document.createElement('div')
             const pSec1 = document.createElement('p')
+            const price1 = document.createElement('div')
+
+            price1.className = "section1-price"
+
+            price1.innerHTML = productAdvice[k].price + " &#3647;"
 
             bodySec1.className = "section1-items"
-            bodySec1.id = Object.keys(k)
+            bodySec1.id = k
             bodySec1.onclick = function() {
                 mainBtn(2, this.id)
             }
 
             bodyImgSec1.className = "section1-img"
             imgSec1.alt = "advice-img.png"
-            imgSec1.src = Object.values(k)[0].img
+            imgSec1.src = productAdvice[k].img
 
             divTitle.className = "section1-title"
 
-            pSec1.innerText = Object.values(k)[0].name
+            pSec1.innerText = productAdvice[k].name
 
             bodyImgSec1.append(imgSec1)
 
             divTitle.append(pSec1)
 
-            bodySec1.append(bodyImgSec1, divTitle)
+            bodySec1.append(bodyImgSec1, price1,divTitle)
 
             iDSec1.append(bodySec1)
         }
@@ -400,6 +447,10 @@ function process() {
     const val2 = document.querySelectorAll('.ks2 input[type="checkbox"]')
     const val3 = document.querySelectorAll('.ks3 input[type="checkbox"]')
 
+    // document.getElementById('pay-alert1').style.display = 'none'
+    document.getElementById('pay-alert2').style.display = 'none'
+    document.getElementById('pay-alert3').style.display = 'none'
+
     data1.length = 0
     data2.length = 0
     data3.length = 0
@@ -421,6 +472,29 @@ function process() {
         }
     });
 
-    mainBtn(3, user)
+    if (data2.length == 0) {
+        document.getElementById('pay-alert2').style.display = 'block'
+    } else if (data3.length == 0) {
+        document.getElementById('pay-alert3').style.display = 'block'
+    } else {
+        mainBtn(3, user)
+
+    }
+        
+    
+    
+    
 }
 
+function uncheckOthers(checkbox) {
+    //console.log(checkbox)
+    
+    if (checkbox.checked) {
+        const checkboxes = document.getElementsByName('option');
+        checkboxes.forEach((box) => {
+            if (box !== checkbox) {
+                box.checked = false;
+            }
+        });
+    }
+}
