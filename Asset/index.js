@@ -19,23 +19,27 @@ const productAdvice = {
     "1" : {
         name : "ช็อคโก้ดับเบิ้ลช็อก",
         img : "https://i.ibb.co/ck1wcGy/396513004-324839000194199-634570417577241155-n.jpg",
-        price : "75"
+        price : "79",
+        ingredient : ["ช็อคโกแลต"]
     },
     "2" : {
         name : "นมฮอกไกโดบุกบราวชูก้า",
         img : "https://i.ibb.co/w0JPcVf/395511584-826706265810985-8656128346704444592-n.jpg",
-        price : "75"
+        price : "79",
+        ingredient : ["มุกบุก"]
     },
     "3" : {
         name : "มัจฉะนมโมจิสตอเบอร์รี่",
         img : "https://i.ibb.co/rxQTXZn/393426069-1456986588198569-7041280943955321738-n.jpg",
-        price : "75"
+        price : "79",
+        ingredient : ["สตอเบอร์รี่"]
     },
 }
 
 let _page = 1
 let user = 0
 let sumPrice = 0
+let advice = 0
 const data1 = []
 const data2 = []
 const data3 = []
@@ -50,6 +54,13 @@ function page() {
         document.getElementById('body-container').style.display = 'block'
         document.getElementById('payment').style.display = 'none'
         document.getElementById('money').style.display = 'none'
+
+        advice = 0
+        const checkB = document.querySelectorAll('input[type=checkbox]')
+        checkB.forEach(element => {
+            element.checked = false
+            element.disabled = false
+        });
     } else if (_page == 2) {
         document.getElementById('body-container').style.display = 'none'
         document.getElementById('payment').style.display = 'block'
@@ -60,8 +71,40 @@ function page() {
         document.getElementById('pay-alert3').style.display = 'none'
         
         //console.log(dataa[user])
-        document.getElementById('title-img').src = dataa[user].img
-        document.getElementById('title-name').innerText = dataa[user].name
+        //console.log(productAdvice[user].img)
+        if (advice == 0) {
+            document.getElementById('title-img').src = dataa[user].img
+            document.getElementById('title-name').innerText = dataa[user].name
+        } else {
+            document.getElementById('title-img').src = productAdvice[user].img
+            document.getElementById('title-name').innerText = productAdvice[user].name
+
+            const checkB = document.querySelectorAll('input[type=checkbox]')
+            //console.log(checkB)
+            if (checkB[20].id == "XL" || checkB[20].id == "L" || checkB[20].id == "M") {
+                document.getElementById("M").disabled = true
+                document.getElementById("L").disabled = true
+                document.getElementById("XL").disabled = true
+                
+                document.getElementById("L").checked = true
+
+                checkB.forEach(element => {
+                    if (element.value == productAdvice[user].ingredient) {
+                        element.checked = true
+                        element.disabled = true
+                    }
+                });
+            } else {
+                document.getElementById("M").disabled = false
+                document.getElementById("L").disabled = false
+                document.getElementById("XL").disabled = false
+            }
+        }
+
+        
+        
+
+        
 
     } else if (_page == 3) {
         document.getElementById('body-container').style.display = 'none'
@@ -236,7 +279,13 @@ function toPro() {
     document.getElementById('money-container').style.display = 'none'
     document.getElementById('process').style.display = 'flex'
     sumPrice = 0
+    advice = 0
 
+    const checkB = document.querySelectorAll('input[type=checkbox]')
+    checkB.forEach(element => {
+        element.checked = false
+        element.disabled = false
+    });
     
     setTimeout(() => {
         document.getElementById('process-title').innerText = 'กรุณารับสินค้า'
@@ -349,6 +398,7 @@ function onLoad() {
             bodySec1.className = "section1-items"
             bodySec1.id = k
             bodySec1.onclick = function() {
+                advice = 1
                 mainBtn(2, this.id)
             }
 
